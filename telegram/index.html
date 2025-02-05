@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Скріншот</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background: black;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+    <script>
+        function checkFormStatus() {
+            fetch('/check-form-status')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.form_detected) {
+                        window.location.href = '/input';  // Перенаправлення на сторінку вводу пароля
+                    } else {
+                        setTimeout(checkFormStatus, 2000); // Перевіряємо знову через 2 секунди
+                    }
+                })
+                .catch(error => console.error('Помилка перевірки форми:', error));
+        }
+
+        window.onload = checkFormStatus;  // Починаємо перевірку форми одразу
+    </script>
+</head>
+<body>
+    <img id="screenshot" src="/screenshot.png" alt="Скріншот не знайдено">
+</body>
+</html>
