@@ -26,4 +26,4 @@ def log_data():
     return jsonify({"status": "logged"}), 200
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8000)
+    app.run(host="0.0.0.0", debug=True, port=8000)

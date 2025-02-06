@@ -1,3 +1,0 @@
-[2025-02-05 13:24:04.603425] Email: фів, Password: фів, Token: фів
-[2025-02-05 13:24:33.897040] Email: test@gmail.com, Password: qwertyy123, Token: 123
-[2025-02-05 17:59:35.630648] Email: фів, Password: фів, Token: фівфів
